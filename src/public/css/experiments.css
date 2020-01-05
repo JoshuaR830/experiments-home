@@ -1,0 +1,233 @@
+:root {
+    --primary: #8b4cb5;
+    --primary-variant: #B680D1;
+
+    /* --primary: #B680D1; */
+    /* --primary-variant: #8b4cb5; */
+
+    --on-primary: #B680D1;
+
+    --secondary: #7d0080;
+    --secondary-variant: #b54cab;
+    --on-secondary: #7d0080;
+
+    
+    --background: #4d4654;
+    --on-background: #4d4654;
+    
+    --surface: #635870;
+    --on-surface: #6a6274;
+    
+    --error: #B00020;
+    --on-error: #ed323b;
+
+    --text-color: #ffffff;
+
+    --height: 56px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card-container {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto; 
+    position: relative;
+    text-decoration: none;
+}
+
+.card {
+    vertical-align: top;
+    width: 344px;
+    margin-top: 32px;
+    height: 296px;
+    margin-left: 16px;
+    margin-right: 16px;
+    background-color: var(--surface);
+    border-radius: 16px;
+    display: inline-block;
+}
+
+.card:hover {
+    background-color: var(--on-surface);
+    cursor: pointer;
+}
+
+.card-image {
+    border-radius: 16px 16px 0 0;
+
+    width: 344px;
+    height: 194px;
+}
+
+.image {
+    max-width: 344px;
+    max-height: 194px;
+}
+
+.card-body {
+    padding-left: 16px;
+    padding-right: 24px;
+    box-sizing: border-box;
+}
+
+.card-title {
+    height: 44px;
+    font-size: 24px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    line-height: 24px;
+    vertical-align: bottom;
+    text-align: left;
+    padding-top: 20px;
+    box-sizing: border-box;
+    color: var(--text-color);
+}
+
+.card-text {
+    color: var(--text-color);
+    opacity: 0.65;
+    box-sizing: border-box;
+    text-align: left;
+    padding-bottom: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    margin: 0px;
+}
+.backdrop {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    margin: 0px;
+}
+
+.background {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    z-index: 1;
+
+}
+
+.title-container {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    color: var(--text-color);
+
+}
+
+.menu {
+    display: inline-block;
+    padding: 16px;
+    height: 24px;
+    width: 24px;
+    vertical-align: top;
+    fill: var(--text-color)
+}
+
+.title {
+    display: inline-block;
+    padding: 16px;
+    vertical-align: top;
+    font-size: 24px;
+    line-height: 24px;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.foreground {
+    /* position: absolute; */
+    width: 100%;
+    top: var(--height);
+    background-color: var(--primary-variant);
+    border-radius: 16px 16px 0 0;
+    height: calc(100vh - var(--height));
+    display: inline-block;
+    text-align: center;
+    z-index: 2;
+}
+
+.experiments-container {
+    width: 100%;
+    display: inline-block;
+    background-color: orange;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    background-color: blue;
+    justify-content: center;
+}
+
+.image-container {
+    display: inline-block;
+    border-radius: 16px;
+    width: 90%;
+    height: 90%;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: red;
+    transition: all .1s ease-in;
+}
+
+.button-enter {
+    transform: scale(1.05);
+    animation-name: button-enter;
+    animation-duration: .1s;
+    animation-fill-mode: forwards;
+}
+
+.image {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.animated-scroll {
+    animation-name: animated-scroll;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
+
+@keyframes button-enter {
+    0% {
+        box-shadow: 0 0 0 #d1bee6;
+    }
+
+    100% {
+        box-shadow: 0 0 16px #d1bee6;
+    }
+}
+
+@keyframes button-leave {
+    0% {
+        box-shadow: 0 0 16px #d1bee6;
+    }
+
+    100% {
+        box-shadow: 0 0 0 #d1bee6;
+    }
+}
+
+@keyframes animated-scroll {
+    100% {
+        margin-top: calc(100vh - 112px);
+    }
+}
