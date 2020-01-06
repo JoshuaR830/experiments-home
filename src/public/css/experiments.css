@@ -99,7 +99,7 @@ a {
 
 body, html {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: red;
     margin: 0px;
 }
@@ -138,6 +138,10 @@ body, html {
     fill: var(--text-color)
 }
 
+.menu:hover {
+    cursor: pointer;
+}
+
 .title {
     display: inline-block;
     padding: 16px;
@@ -158,6 +162,29 @@ body, html {
     display: inline-block;
     text-align: center;
     z-index: 2;
+}
+
+.reveal-foreground {
+    display: none;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: var(--text-color);
+    width: 100%;
+    position: relative;
+    vertical-align: top;
+}
+
+.show-foreground-button {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding: 16px;
+    fill: var(--text-color);
+}
+
+.hidden {
+    display: none;
 }
 
 .experiments-container {
@@ -199,8 +226,15 @@ body, html {
     max-width: 100%;
 }
 
-.animated-scroll {
-    animation-name: animated-scroll;
+.animated-scroll-forwards {
+    animation-name: animated-scroll-forwards;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+}
+
+.animated-scroll-backwards {
+    animation-name: animated-scroll-backwards;
     animation-duration: 1s;
     animation-fill-mode: forwards;
     overflow: hidden;
@@ -226,8 +260,20 @@ body, html {
     }
 }
 
-@keyframes animated-scroll {
+@keyframes animated-scroll-forwards {
+    0% {
+        margin-top: 56px;
+    }
     100% {
         margin-top: calc(100vh - 112px);
+    }
+}
+
+@keyframes animated-scroll-backwards {
+    0% {
+        margin-top: calc(100vh - 112px);
+    }
+    100% {
+        margin-top: 0px;
     }
 }
